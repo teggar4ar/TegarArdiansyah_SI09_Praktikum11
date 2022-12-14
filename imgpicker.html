@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+    
+    <style>
+        .container{
+            display: flex;
+            width: 500px;
+            height: 300px;
+            margin: 50px 350px;
+        }
+        .box{
+            display: flex;
+            justify-content: center;
+            width: 500px;
+            height: 300px;
+        }
+        .header h1{
+            text-align: center;
+            color: seagreen;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+        }
+        #select{
+            width: 200px;
+            
+        }
+    </style>
+
+    <script>
+        function image_picker(){
+            let pilihan = document.getElementById ("select").value;
+            const list_image = ["badak.png", "bison.png","elang.png", "jerapah.png", "singa.png", "kucing.png"]
+
+            if(pilihan == "bison"){
+                let select = list_image[1];
+                document.getElementById("image").src = `images/${select}`
+            }
+            if(pilihan == "singa"){
+                let select = list_image[4];
+                document.getElementById("image").src = `images/${select}`
+            }
+            if(pilihan == "kucing"){
+                let select = list_image[5];
+                document.getElementById("image").src = `images/${select}`
+            }
+            if(pilihan == "elang"){
+                let select = list_image[2];
+                document.getElementById("image").src = `images/${select}`
+            }
+            if(pilihan == "jerapah"){
+                let select = list_image[3];
+                document.getElementById("image").src = `images/${select}`
+            }
+            if(pilihan == "badak"){
+                let select = list_image[0];
+                document.getElementById("image").src = `images/${select}`
+            }
+        }    
+    </script>
+
+</head>
+<body>
+    <div class="header">
+        <h1>Images Picker Tegar Ardiansyah</h1>
+    </div>
+    <hr>
+    <select name="" id="select" onchange="image_picker()">
+        <option value="">Pilih gambar</option>
+        <option value="bison">Bison</option>
+        <option value="singa">Singa</option>
+        <option value="kucing">Kucing</option>
+        <option value="elang">Elang</option>
+        <option value="jerapah">Jerapah</option>
+        <option value="badak">Badak</option>
+    </select>
+    <br>
+    <div class="container">
+        <div class="box">
+            <img id="image">
+        </div>
+    </div>
+</body>
+</html>
